@@ -1,0 +1,14 @@
+^shiny\.dsfr\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
+^cran-comments\.md$
+^\.github$
+^dev$
+^nodes_modules$
+^pkgdown$
+^_pkgdown\.yml$
+^\.gitlab-ci\.yml$
+^doc$
+^Meta$
+^docs$

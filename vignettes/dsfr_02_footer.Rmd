@@ -1,0 +1,99 @@
+---
+title: "Pied de page (footer)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Pied de page (footer)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include= FALSE}
+library(shiny.dsfr)
+library(htmltools)
+dsfrPage()
+```
+
+### Footer basique
+```{r footer_basique}
+dsfrFooter()
+```
+
+### Footer avec le bloc marianne personnalisé 
+```{r footer_bloc_marianne_perso}
+dsfrFooter(
+  marianne_title = "Préfet$de la Seine-$Maritime",
+  marianne_href = "https://www.seine-maritime.gouv.fr/",
+  marianne_href_title = "Rejoindre le site des services de l'état en Seine-Maritime"
+)
+```
+
+### Footer avec une description personnalisée 
+```{r footer_description_perso}
+dsfrFooter(
+  marianne_title = "Préfet$de la Seine-$Maritime",
+  marianne_href = "/",
+  description = "Le but de cette application est de montrer ..."
+)
+```
+
+### Footer sans lien de contenu
+```{r footer_sans_lien_contenu}
+dsfrFooter(
+  marianne_title = "Préfet$de la Seine-$Maritime",
+  marianne_href = "/",
+  content_links = NULL
+)
+```
+
+### Footer avec lien de contenu
+```{r footer_avec_lien_contenu}
+dsfrFooter(
+  content_links = list(
+    list(href = "https://www.gendarmerie.interieur.gouv.fr/", title ="Gendarmerie Nationale"), 
+    list(href = "https://www.police-nationale.interieur.gouv.fr/", title = "Police Nationale")
+    )
+)
+```
+
+### Footer avec liens additionnels
+```{r footer_avec_lien_additionnel}
+dsfrFooter(
+  bottom_links = list(
+    list(href = "#", title = "Plan du site"), 
+    list(href = "#", title = "Accessibilité conforme"), 
+    list(href = "#", title = "Mentions légales"),
+    list(href = "#", title = "Données personnelles")
+    )
+)
+```
+
+
+### Footer complet
+```{r footer_complet}
+dsfrFooter(
+  marianne_title = "République$française",
+  marianne_href = "/",
+  marianne_href_title = "Retour à l'accueil",
+  description = "Une longue description qui permet de décrire au mieux le contenu du site.
+  Une longue description qui permet de décrire au mieux le contenu du site.
+  Une longue description qui permet de décrire au mieux le contenu du site.",
+  content_links = list(
+    list(href = "https://legifrance.gouv.fr", title = "legifrance.gouv.fr"), 
+    list(href = "https://gouvernement.fr", title = "gouvernement.fr"), 
+    list(href = "https://service-public.fr", title = "service-public.fr"), 
+    list(href = "https://data.gouv.fr", title = "data.gouv.fr")),
+  bottom_links = list(
+    list(href = "#", title = "Plan du site"), 
+    list(href = "#", title = "Accessibilité conforme"), 
+    list(href = "#", title = "Mentions légales"),
+    list(href = "#", title = "Données personnelles"))
+)
+```
+

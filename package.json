@@ -1,0 +1,22 @@
+{
+  "name": "shiny.dsfr",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "main.js",
+  "directories": {
+    "man": "man"
+  },
+  "scripts": {
+    "test": "mocha srcjs/test",
+    "build-dev": "esbuild srcjs/main.js --bundle --format=esm --outfile=inst/shiny.dsfr-0.0.0.9000/js/shiny.dsfr.js",
+    "build-prod": "esbuild srcjs/main.js --bundle --minify --sourcemap --format=esm --outfile=inst/shiny.dsfr-0.0.0.9000/js/shiny.dsfr.min.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT + file LICENSE",
+  "devDependencies": {
+    "esbuild": "^0.8.57",
+    "mocha": "^8.3.0"
+  }
+}

@@ -1,0 +1,109 @@
+---
+title: "Les entêtes (header)"
+output: 
+  rmarkdown::html_document
+vignette: >
+  %\VignetteIndexEntry{01_header}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+ignore <- Sys.getenv("IGNORE") == "TRUE"
+```
+
+```{r setup, include= FALSE}
+library(shiny.dsfr)
+library(htmltools)
+dsfrPage()
+```
+
+### Header simple
+
+```{r header_defaut}
+    dsfrHeader()
+```
+
+Le bloc marianne utilise *République Française* par défaut.
+
+
+### Header avec le bloc-marianne personnalisé
+
+```{r header_bloc_marianne_perso}
+    dsfrHeader(
+      marianne_title = "Préfet$de la Seine-$Maritime"
+    )
+```
+Le `$` permet de faire un saut de ligne.
+
+### Header avec le nom du service personnalisé
+
+```{r header_service_perso}
+# Le `$` permet de faire un saut de ligne.
+    dsfrHeader(
+      marianne_title = "Préfet$de la Seine-$Maritime",
+      service_title = "DDTM 76"
+    )
+```
+
+### Header avec la baseline
+
+```{r header_baseline}
+    dsfrHeader(
+      marianne_title = "Préfecture$de la Seine-$Maritime",
+      service_title = "DDTM 76",
+      service_baseline = "Application de dataviz"
+    )
+```
+
+
+### Header avec le logo
+
+```{r header_logo_pkgdown, echo= TRUE, eval= ignore}
+    dsfrHeader(
+      marianne_title = "Préfecture$de la Seine-$Maritime",
+      service_title = "DDTM 76",
+      service_baseline = "Application de dataviz pkgdown",
+      logo_src = "img/logo.png"
+    )
+```
+
+```{r header_logo_vignette, echo=FALSE, eval= !ignore}
+    dsfrHeader(
+      marianne_title = "Préfecture$de la Seine-$Maritime",
+      service_title = "DDTM 76",
+      service_baseline = "Application de dataviz vignette",
+      logo_src = system.file("img", "logo.png", package = "shiny.dsfr")
+    )
+```
+
+
+### Header sans élargissement du lien
+
+```{r header_sans_elargissement_lien_pkgdown, echo = TRUE, eval= ignore}
+    dsfrHeader(
+      marianne_title = "Préfecture$de la Seine-$Maritime",
+      service_title = "DDTM 76",
+      service_baseline = "Application de dataviz pkdown",
+      logo_src = "img/logo.png",
+      enlarge_link = FALSE
+    )
+```
+
+```{r header_sans_elargissement_lien_vignette,  echo = FALSE, eval= !ignore}
+    dsfrHeader(
+      marianne_title = "Préfecture$de la Seine-$Maritime",
+      service_title = "DDTM 76",
+      service_baseline = "Application de dataviz vignette",
+      logo_src = system.file("img", "logo.png", package = "shiny.dsfr"),
+      enlarge_link = FALSE
+    )
+```
+
+
+
